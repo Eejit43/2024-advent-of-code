@@ -7,7 +7,12 @@ const glob = new Glob('challenges/**/index.ts');
 
 const files = await Array.fromAsync(glob.scan('.'));
 
-const mostRecentFile = files.sort().at(-1)!;
+const mostRecentFile = files.sort((a, b) => {
+    const aNumber = /(\d{1,2})/.exec(a)![1];
+    const bNumber = /(\d{1,2})/.exec(b)![1];
+
+    return Number(bNumber) - Number(aNumber);
+})[0];
 
 const snowflake = chalk.blue('❄️');
 
