@@ -7,7 +7,7 @@ interface Location {
     column: number;
 }
 
-let mazeStart!: Location;
+let mazeStart: Location | undefined;
 
 for (const [rowIndex, row] of maze.entries()) {
     for (const [columnIndex, column] of row.entries())
@@ -35,7 +35,7 @@ const moveOptions = {
 
 const cachedScores: Record<string, number> = {};
 
-let queue: [Location, Direction, number, Location[]][] = [[mazeStart, Direction.Right, 0, [mazeStart]]];
+let queue: [Location, Direction, number, Location[]][] = [[mazeStart!, Direction.Right, 0, [mazeStart!]]];
 
 let bestScore = Infinity;
 const paths: [Location[], number][] = [];

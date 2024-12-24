@@ -123,6 +123,7 @@ function run(registerValues: { a: bigint; b: bigint; c: bigint }) {
 export const partOneResult = run(initialRegisterValues);
 
 // Part Two
+
 /**
  * Finds the initial register A value that will output the given program.
  * @param nextValue The next value to try.

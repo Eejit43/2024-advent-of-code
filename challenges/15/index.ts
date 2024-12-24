@@ -18,7 +18,7 @@ const partOneMapCharactersToType: Record<string, PartOneMapType> = {
     /* eslint-enable @typescript-eslint/naming-convention */
 };
 
-const partOneMap: PartOneMapType[][] = [];
+const partOneMap: (PartOneMapType | undefined)[][] = [];
 
 interface Location {
     row: number;
@@ -126,7 +126,7 @@ const partTwoMapCharactersToType: Record<string, PartTwoMapType[]> = {
     /* eslint-enable @typescript-eslint/naming-convention */
 };
 
-const partTwoMap: PartTwoMapType[][] = [];
+const partTwoMap: (PartTwoMapType | undefined)[][] = [];
 
 for (const [rowIndex, row] of mapData.split('\n').entries()) {
     partTwoMap.push([]);

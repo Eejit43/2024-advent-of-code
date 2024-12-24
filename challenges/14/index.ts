@@ -27,6 +27,7 @@ function simulateSecond() {
 let maxRobots = 0;
 let maxRobotsSeconds = 0;
 
+// eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
 for (let index = 0; index < (IS_PART_TWO ? 10_000 : 0); index++) {
     simulateSecond();
 

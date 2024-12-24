@@ -34,7 +34,7 @@ for (let index = 0; index < 25; index++) blink();
 export const partOneLength = stones.length;
 
 // Part Two
-const knownLengths: Record<number, Record<number, number>> = {};
+const knownLengths = new Map<number, Record<number, number>>();
 
 /**
  * Gets the amount of stones a stone will be split into after a given amount of blinks.
@@ -44,7 +44,7 @@ const knownLengths: Record<number, Record<number, number>> = {};
 function getStoneLength(stone: number, blinks: number) {
     if (blinks === 0) return 1;
 
-    const cachedLength = knownLengths[blinks]?.[stone];
+    const cachedLength = knownLengths.get(blinks)?.[stone];
     if (cachedLength) return cachedLength;
 
     let result: number;
@@ -58,8 +58,8 @@ function getStoneLength(stone: number, blinks: number) {
         result = getStoneLength(leftStone, blinks - 1) + getStoneLength(rightStone, blinks - 1);
     } else result = getStoneLength(stone * 2024, blinks - 1);
 
-    if (blinks in knownLengths) knownLengths[blinks][stone] = result;
-    else knownLengths[blinks] = { [stone]: result };
+    if (knownLengths.get(blinks)) knownLengths.get(blinks)![stone] = result;
+    else knownLengths.set(blinks, { [stone]: result });
 
     return result;
 }

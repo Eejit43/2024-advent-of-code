@@ -60,7 +60,7 @@ for (const [point, distance] of cachedDistances)
 
         const stepsSaved = distance - otherDistance - difference;
 
-        if (difference <= (IS_PART_TWO ? 20 : 2) && stepsSaved >= 100) cheats++;
+        if (difference <= (IS_PART_TWO ? 20 : 2) && stepsSaved >= 100) cheats++; // eslint-disable-line @typescript-eslint/no-unnecessary-condition
     }
 
 export default cheats;

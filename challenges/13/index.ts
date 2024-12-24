@@ -8,7 +8,7 @@ const machines = data.split('\n\n').map((machine) => {
             machine,
         )!.groups!;
 
-    const prizeOffset = IS_PART_TWO ? 10_000_000_000_000 : 0;
+    const prizeOffset = IS_PART_TWO ? 10_000_000_000_000 : 0; // eslint-disable-line @typescript-eslint/no-unnecessary-condition
 
     return {
         a: { x: Number.parseInt(data.aXOffset), y: Number.parseInt(data.aYOffset) },

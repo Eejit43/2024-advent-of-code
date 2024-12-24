@@ -106,6 +106,6 @@ function getFullPath(map: (string | null)[][], code: string[], depth: number) {
 
 let total = 0;
 
-for (const code of data.split('\n')) total += getFullPath(numericKeypadLayout, [...code], IS_PART_TWO ? 25 : 2) * Number.parseInt(code);
+for (const code of data.split('\n')) total += getFullPath(numericKeypadLayout, [...code], IS_PART_TWO ? 25 : 2) * Number.parseInt(code); // eslint-disable-line @typescript-eslint/no-unnecessary-condition
 
 export default total;

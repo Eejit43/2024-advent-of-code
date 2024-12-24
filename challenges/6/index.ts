@@ -5,23 +5,23 @@ const rowsOriginal = data.split('\n').map((row) => [...row]);
 const rows = rowsOriginal.map((row) => [...row]);
 
 enum Direction {
-    UP,
-    RIGHT,
-    DOWN,
-    LEFT,
+    Up,
+    Right,
+    Down,
+    Left,
 }
 
 const directionsOffset = {
-    [Direction.UP]: [-1, 0],
-    [Direction.RIGHT]: [0, 1],
-    [Direction.DOWN]: [1, 0],
-    [Direction.LEFT]: [0, -1],
+    [Direction.Up]: [-1, 0],
+    [Direction.Right]: [0, 1],
+    [Direction.Down]: [1, 0],
+    [Direction.Left]: [0, -1],
 };
 
 // Part One
 let startLocation = [0, 0];
 let currentLocation = [0, 0];
-let currentDirection = Direction.UP;
+let currentDirection = Direction.Up;
 
 for (const [rowIndex, row] of rows.entries())
     if (row.includes('^')) {
@@ -69,7 +69,7 @@ for (const [rowIndex, row] of rowsOriginal.entries())
             newRows[rowIndex][characterIndex] = '#';
 
             let currentLocation = startLocation;
-            let currentDirection = Direction.UP;
+            let currentDirection = Direction.Up;
 
             const visited = new Set();
 

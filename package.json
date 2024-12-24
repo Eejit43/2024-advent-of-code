@@ -8,7 +8,7 @@
         "chalk": "^5.4.1"
     },
     "devDependencies": {
-        "@eejit/eslint-config-typescript": "^13.10.1",
+        "@eejit/eslint-config-typescript": "^13.11.0",
         "@eejit/prettier-config": "^3.3.0",
         "bun-types": "^1.1.42",
         "typescript": "^5.7.2"
